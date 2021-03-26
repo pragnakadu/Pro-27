@@ -23,8 +23,8 @@ function setup() {
 	//Create the Bodies Here.
     roof = new Roof(350,100,600,20)
 	bob1 = new Ball(100,500,50)
-	 chain1 = new Chain(bob1,roof,100,500)
-
+	 chain1 = new Chain(bob1.body,roof.body,-bob1Diameter*2,0)
+	
 	Engine.run(engine);
   
 }
@@ -33,6 +33,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(100,0,0);
+  Engine.update(engine);	
   
   roof.display()
   bob1.display()
